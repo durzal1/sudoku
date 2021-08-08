@@ -34,7 +34,7 @@ class solveAlgorithm:
     # lets the user play sudoku and fill in answers themselves
     def play(self):
         # space between spots
-        space = self.WIDTH // 12
+        space = self.WIDTH // 14
         space2 = self.HEIGHT // 9
 
         # constants
@@ -109,9 +109,14 @@ class solveAlgorithm:
                     if pos[0] > 745:
                         # which number has been selected +1
                         num = pos[1] // space
+                        currentNumSelected = num + 1
 
+                        # if its over 9 then they want to remove the empty space
+                        if num > 9:
+                            # changes currentNumSelected to 0 so it can be changed
+                            currentNumSelected = 0
                         # if its 9 then user is finished
-                        if num == 9:
+                        elif num == 9:
                             # first we find what the first unknown is and give it options to chose from
                             found = False
                             firstI = -1
@@ -174,7 +179,6 @@ class solveAlgorithm:
                                     exit()
 
 
-                        currentNumSelected = num + 1
 
                     # inputting an answer
                     elif currentNumSelected != None:
@@ -191,11 +195,12 @@ class solveAlgorithm:
                             pygame.draw.rect(self.win, (255,255,255), (i*space2+5, j*space2+5, space2-10, space2-10))
                             pygame.display.update()
 
-                            # draws the number
-                            font = pygame.font.SysFont('arial', 50)
-                            text = font.render(str(currentNumSelected), True, (0, 0, 255))
-                            self.win.blit(text, (i * space2 + xConst, j * space2 + yConst))
-                            pygame.display.update()
+                            if self.guessGrid[i][j] != 0:
+                                # draws the number
+                                font = pygame.font.SysFont('arial', 50)
+                                text = font.render(str(currentNumSelected), True, (0, 0, 255))
+                                self.win.blit(text, (i * space2 + xConst, j * space2 + yConst))
+                                pygame.display.update()
 
     # checks all the answers of user
     def backtracking(self, num, i, j, grid, solutions):
