@@ -1,7 +1,7 @@
 classic game of sudoku.
 
 User is given a prompt and can create any amount of any sudoku puzzle of 4 difficulties(Beginner, intermidiate, advanced, expert)
-Difficulties and time to create are defined as the follows:
+Difficulties and time to create are defined as the following:
 
 Beginner: 30 open spaces | less than a second
 
