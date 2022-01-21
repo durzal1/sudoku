@@ -12,12 +12,12 @@ Advanced: 50 open spaces | several seconds
 Expert: most amount of open spaces possible while ensuring only one solution | 4-5 minutes
 
 
-The harder puzzles take a long time to create since after removing spaces from a correct board it has to keep checking to make sure this is only one solution. 
+The harder the puzzle the longer it takes to create since after removing spaces from a correct board it has to keep checking to make sure this is only one solution.
 
-After they create the puzzles they can choose which puzzle they want to play.
+After they create the puzzles, they can choose which puzzle they want to play.
 
 After they play it, the program will delete the puzzle so it cannot be played again.
 
-While playing a puzzle user inserts numbers onto the screen and then can check the answers once they are done.
+While playing a puzzle, the user inserts numbers onto the screen and then can check the answers once they are done.
 
 The dist file has a .exe file in it 
